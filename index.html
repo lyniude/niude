@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片演示</title>
+	<style>
+		body{
+			background-color: #ddd;
+		}
+
+		#oDiv{
+			width: 500px;
+			background-color: #fff;
+		}
+
+		#placeholder{
+			margin: 50px;
+			
+			width: 400px;
+		}
+
+		#description{
+			width: 500px;
+			color: #3a4;
+			text-align:center;
+			display: inline-block;
+		}
+	</style>
+<script>		
+	function showPic(whichpic){
+	var source=whichpic.getAttribute("href");
+	var placeholder=document.getElementById("placeholder");
+	placeholder.setAttribute("src",source);
+	var text =whichpic.getAttribute("title");
+	var description=document.getElementById("description");
+	description.firstChild.nodeValue=text;
+				}
+</script>	
+</head>
+<body>
+	<h1>这个是图片切换演示</h1>
+	<p>希望你喜欢</p>
+	<ul>
+		<li><a href="img/mudan.jpg" title="雍容华贵是牡丹" onclick="showPic(this);return false;">牡丹</a></li>
+		<li><a href="img/hehua.jpg" title="出淤泥而不染的荷花" onclick="showPic(this);return false;">荷花</a></li>
+		<li><a href="img/heye.jpg" title="东西荷叶两相怜" onclick="showPic(this);return false;">荷叶</a></li>
+		<li><a href="img/canjiu.jpg" title="闪闪发光的刀叉" onclick="showPic(this);return false;">餐具</a></li>
+	</ul>
+	<div id="oDiv">
+
+	<img id="placeholder" src="img/ad.jpg" alt="我的图片演示程序" />
+	
+	</div>
+
+	<p id="description"> 这里就是我的图片演示</p>
+
+
+
+</body>
+</html>
